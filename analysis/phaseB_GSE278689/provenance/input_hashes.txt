@@ -1,0 +1,6 @@
+﻿# input hashes  2026-09-28 07:25:05 +08:00
+GSE278689_sn_barcodes.tsv.gz  sha256=eb11df07811748293d49e2004791ee16b3b09581cf422517d6fdd2fc04886b7c  md5=672b1b98bf7218d8ce4a2b675c8f686e  bytes=155294  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE278689\data\GSE278689_sn_barcodes.tsv.gz
+GSE278689_sn_features.tsv.gz  sha256=16750a608fba5f17d1f2112f6ac79bbe727f73f8c8418e9be0a5528793edec42  md5=8ed8943a13d6ca88dd6114adb4b61526  bytes=221703  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE278689\data\GSE278689_sn_features.tsv.gz
+GSE278689_sn_matrix.mtx.gz  sha256=3bf05c355a2bb1da6c8789ad949750180477d5b42893445839acdec696afdd31  md5=a23a170fd7358acf6276afb591398a49  bytes=106214266  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE278689\data\GSE278689_sn_matrix.mtx.gz
+GSE278689_sn_metadata.csv.gz  sha256=608c5824bead959f2b58c3e4ef3576ae72afb8b5643131d9ca66769244672824  md5=6511ba608bff3a60953ae2a4ca9f573c  bytes=196873  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE278689\data\GSE278689_sn_metadata.csv.gz
+GSE278689_sn_metadata.csv.gz  sha256=608c5824bead959f2b58c3e4ef3576ae72afb8b5643131d9ca66769244672824  md5=6511ba608bff3a60953ae2a4ca9f573c  bytes=196873  E:\Tex\HMlong\BJC_EXT_v1_20260927\annotations\GSE278689_sn_metadata.csv.gz

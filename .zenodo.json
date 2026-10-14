@@ -1,0 +1,31 @@
+{
+  "title": "Cross-scale evaluation of SIGLEC15 RNA for measurement of an ACP5/MMP9-high myeloid state in pancreatic ductal adenocarcinoma — analysis code",
+  "version": "v1.0",
+  "description": "Analysis code, frozen analysis rules, run records and software-environment records supporting the manuscript of the same title.<br><br>This is the <b>code</b> deposit. The machine-readable result tables are published with the paper as its Additional files 2–4 and are not duplicated here; the code deposit carries the scripts, the documents that fix the analysis rules, the run and provenance logs, the environment records, and the small errata tables that the reading guide refers to.<br><br><b>analysis/</b> — the primary cross-scale analysis and its prespecified sensitivity analyses, the coupling audits and the figure-generation code; the v72 tumour-level burden and sparsity extension with its frozen estimand contract; the state-restricted V04/V05 analyses; the Phase B bulk extension for GSE205154 and GSE21501 with each dataset's frozen cohort definition; the GSE278688 and GSE278689 analyses — whole-cell single-cell and single-nucleus RNA-seq respectively, analysed separately and not pooled with the bulk cohorts — with their independent verification scripts; and the four-cohort and five-cohort random-effects meta-analysis with its <i>metafor</i> cross-check. <b>paired_representation/</b> — the V46 paired-representation extension. <b>external_single_cell/</b> — the external single-cell assessment: frozen analysis rules, eligibility and independent-check scripts, and the input inventory.<br><br>The documents that fix the analysis rules are kept alongside the code that implements them, so that the dates on which rules were frozen remain checkable. <code>CURRENT_READING_GUIDE.md</code> records the reporting corrections that apply when reading historical status headings, and the files it names are included so that its warnings can be checked. <code>ENVIRONMENT.md</code> separates the recorded original environment from the requirements for reproduction. Absolute paths used in the original run are resolved through documented environment variables, each defaulting to the original location. <code>SHA256_MANIFEST.txt</code> locks every file in this release and <code>verify_manifest.py</code> re-checks it.<br><br>All primary data are public and are <i>not</i> redistributed here: TCGA-PAAD (NCI Genomic Data Commons), GTEx, CPTAC-PDAC (LinkedOmics), PRIDE PXD048644, and NCBI GEO series GSE57495, GSE85916, GSE155698, GSE156405, GSE212966, GSE282302 (main analysis and comparators), GSE205154 and GSE21501 (bulk extension cohorts), GSE278688 (whole-cell single-cell) and GSE278689 (single-nucleus) as additional cellular sensitivity datasets analysed separately, and GSE217845 (external single-cell assessment). Accessions, preprocessing roles and inclusion rules are listed in the manuscript and its Supplementary Table S14.",
+  "creators": [
+    {
+      "name": "Lin, Junyi"
+    },
+    {
+      "name": "Huang, Yan"
+    },
+    {
+      "name": "Hou, Molong",
+      "orcid": "0009-0007-5148-1034"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "SIGLEC15",
+    "ACP5",
+    "MMP9",
+    "pancreatic ductal adenocarcinoma",
+    "cross-scale measurement",
+    "single-cell RNA sequencing",
+    "spatial transcriptomics",
+    "reproducibility"
+  ]
+}

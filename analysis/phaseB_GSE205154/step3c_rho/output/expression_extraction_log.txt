@@ -1,0 +1,146 @@
+==============================================================================
+STEP 3c-1  GSE205154  --  EXPRESSION EXTRACTION (3 genes only)
+generated : 2026-09-28 12:25:35
+==============================================================================
+
+Frame of reference for the extraction:
+  The manuscript's own loader (analysis_F_cross_scale.py, v39 archive,
+  load_bulk()) reads each cohort as a GENES x SAMPLES table and then transposes
+  it:  frame = genes_by_samples.T   ->  SAMPLES as rows, GENES as columns.
+  zscore_columns() standardises axis=0, i.e. down the ROWS, i.e. ACROSS SAMPLES.
+  The deposited GSE205154 matrices are already GENES x SAMPLES, so the extraction
+  reproduces the same orientation directly. This orientation is re-asserted
+  explicitly in script 03.
+
+manifest: 289 sample titles loaded (titles only; no expression)
+
+==============================================================================
+MATRIX : TMM
+file   : GSE205154_Gene_Level_TMM_Estimates.txt.gz
+note   : gene-level TMM (edgeR method), not log scaled; carries TMM_pass_filter
+==============================================================================
+--- P1  SHA-256 re-verified against the frozen record ---
+  [PASS] SHA-256 matches frozen value (9f362bb06995e28d...)
+
+  annotation columns : ['ID', 'ensembl_gene_id', 'hgnc_symbol', 'gene_biotype', 'gene_name', 'TMM_pass_filter']
+  sample columns     : 289  (positions 6..294)
+  sample labels are  : SAMPLE TITLES (ST-########-X), not GSM accessions
+  first 3 / last 3   : ['ST-00021340-F', 'ST-00017297-T', 'ST-00019601-T'] ... ['ST-00007183-T', 'ST-00013415-T', 'ST-00018525-T']
+  [PASS] 289 sample columns
+  [PASS] matrix sample columns equal the 289 manifest sample titles (as a set)
+  [PASS] 289 distinct sample titles in the matrix header (no duplicate column)
+  [PASS] column order fixed from this matrix (reference order)
+  [PASS] 60554 feature rows
+
+--- P4  one row per gene, correct id / biotype / filter ---
+  [PASS] SIGLEC15  row_index=17332  ensembl=ENSG00000197046 biotype=protein_coding TMM_pass_filter=TRUE
+        row_index matches the frozen value 17332 (independently re-derived, not copied)
+  [PASS] ACP5      row_index=2686   ensembl=ENSG00000102575 biotype=protein_coding TMM_pass_filter=TRUE
+        row_index matches the frozen value 2686 (independently re-derived, not copied)
+  [PASS] MMP9      row_index=2418   ensembl=ENSG00000100985 biotype=protein_coding TMM_pass_filter=TRUE
+        row_index matches the frozen value 2418 (independently re-derived, not copied)
+
+--- P7  value scale (proves the downstream log2 transform is appropriate) ---
+  SIGLEC15  min=0.1948       q25=0.767        med=1.084        q75=1.526        max=45.88        mean=1.523        zeros=0    all_integer=False
+  ACP5      min=4.496        q25=16.82        med=23.99        q75=34.88        max=143.9        mean=28.6         zeros=0    all_integer=False
+  MMP9      min=0.972        q25=14.69        med=29.32        q75=56.83        max=535.4        mean=48.88        zeros=0    all_integer=False
+  [PASS] no negative values
+  [PASS] max value 535.4 > 100 -> the matrix is NOT log scaled, so log2(x+1) is the manuscript's log-scale analogue
+  [PASS] values are non-integer -> normalised (not raw counts)
+
+==============================================================================
+MATRIX : TPM
+file   : GSE205154_Gene_Level_TPM_Estimates.txt.gz
+note   : gene-level TPM, not log scaled
+==============================================================================
+--- P1  SHA-256 re-verified against the frozen record ---
+  [PASS] SHA-256 matches frozen value (686582f0c00467de...)
+
+  annotation columns : ['ID', 'ensembl_gene_id', 'hgnc_symbol', 'gene_biotype', 'gene_name']
+  sample columns     : 289  (positions 5..293)
+  sample labels are  : SAMPLE TITLES (ST-########-X), not GSM accessions
+  first 3 / last 3   : ['ST-00021340-F', 'ST-00017297-T', 'ST-00019601-T'] ... ['ST-00007183-T', 'ST-00013415-T', 'ST-00018525-T']
+  [PASS] 289 sample columns
+  [PASS] matrix sample columns equal the 289 manifest sample titles (as a set)
+  [PASS] 289 distinct sample titles in the matrix header (no duplicate column)
+  [PASS] column order identical to the first matrix
+  [PASS] 60554 feature rows
+
+--- P4  one row per gene, correct id / biotype / filter ---
+  [PASS] SIGLEC15  row_index=17332  ensembl=ENSG00000197046 biotype=protein_coding TMM_pass_filter=None
+        row_index matches the frozen value 17332 (independently re-derived, not copied)
+  [PASS] ACP5      row_index=2686   ensembl=ENSG00000102575 biotype=protein_coding TMM_pass_filter=None
+        row_index matches the frozen value 2686 (independently re-derived, not copied)
+  [PASS] MMP9      row_index=2418   ensembl=ENSG00000100985 biotype=protein_coding TMM_pass_filter=None
+        row_index matches the frozen value 2418 (independently re-derived, not copied)
+
+--- P7  value scale (proves the downstream log2 transform is appropriate) ---
+  SIGLEC15  min=0.2452       q25=0.9968       med=1.36         q75=1.938        max=59.56        mean=1.895        zeros=0    all_integer=False
+  ACP5      min=8.694        q25=28.62        med=40.94        q75=59.5         max=276.1        mean=48.63        zeros=0    all_integer=False
+  MMP9      min=0.6363       q25=9.394        med=18.82        q75=38.51        max=296.7        mean=31.33        zeros=0    all_integer=False
+  [PASS] no negative values
+  [PASS] max value 296.7 > 100 -> the matrix is NOT log scaled, so log2(x+1) is the manuscript's log-scale analogue
+  [PASS] values are non-integer -> normalised (not raw counts)
+
+==============================================================================
+MATRIX : COUNTS
+file   : GSE205154_Gene_Level_Counts_Estimates.txt.gz
+note   : gene-level estimated counts (kallisto/tximport)
+==============================================================================
+--- P1  SHA-256 re-verified against the frozen record ---
+  [PASS] SHA-256 matches frozen value (4c7004cfe15a94d8...)
+
+  annotation columns : ['ID', 'ensembl_gene_id', 'hgnc_symbol', 'gene_biotype', 'gene_name']
+  sample columns     : 289  (positions 5..293)
+  sample labels are  : SAMPLE TITLES (ST-########-X), not GSM accessions
+  first 3 / last 3   : ['ST-00021340-F', 'ST-00017297-T', 'ST-00019601-T'] ... ['ST-00007183-T', 'ST-00013415-T', 'ST-00018525-T']
+  [PASS] 289 sample columns
+  [PASS] matrix sample columns equal the 289 manifest sample titles (as a set)
+  [PASS] 289 distinct sample titles in the matrix header (no duplicate column)
+  [PASS] column order identical to the first matrix
+  [PASS] 60554 feature rows
+
+--- P4  one row per gene, correct id / biotype / filter ---
+  [PASS] SIGLEC15  row_index=17332  ensembl=ENSG00000197046 biotype=protein_coding TMM_pass_filter=None
+        row_index matches the frozen value 17332 (independently re-derived, not copied)
+  [PASS] ACP5      row_index=2686   ensembl=ENSG00000102575 biotype=protein_coding TMM_pass_filter=None
+        row_index matches the frozen value 2686 (independently re-derived, not copied)
+  [PASS] MMP9      row_index=2418   ensembl=ENSG00000100985 biotype=protein_coding TMM_pass_filter=None
+        row_index matches the frozen value 2418 (independently re-derived, not copied)
+
+--- P7  value scale (proves the downstream log2 transform is appropriate) ---
+  SIGLEC15  min=3.01         q25=31.09        med=50.02        q75=72.04        max=1985         mean=67           zeros=0    all_integer=False
+  ACP5      min=90           q25=669          med=1117         q75=1817         max=1.028e+04    mean=1410         zeros=0    all_integer=False
+  MMP9      min=46.92        q25=635.9        med=1256         q75=2799         max=2.619e+04    mean=2256         zeros=0    all_integer=False
+  [PASS] no negative values
+  [PASS] counts scale (max=2.619e+04)
+
+==============================================================================
+--- P5  gene row indices identical across the three matrices ---
+==============================================================================
+  [PASS] SIGLEC15  row_index 17332 identical across TMM / TPM / COUNTS  (frozen 17332)
+  [PASS] ACP5      row_index 2686 identical across TMM / TPM / COUNTS  (frozen 2686)
+  [PASS] MMP9      row_index 2418 identical across TMM / TPM / COUNTS  (frozen 2418)
+
+--- sample order identical across all three matrices ---
+  [PASS] TPM column order identical to TMM
+  [PASS] COUNTS column order identical to TMM
+
+==============================================================================
+WRITING expression_3genes.csv
+==============================================================================
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\expression_3genes.csv  (31606 bytes)
+  rows  : 10 (header + 3 representations x 3 genes)
+  cols  : 6 annotation + 289 samples
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\expression_provenance.json
+
+==============================================================================
+RESULT: ALL PROVENANCE CHECKS PASSED
+  P1  3/3 matrix SHA-256 match the frozen record
+  P2  60,554 feature rows in each matrix
+  P3  289 sample columns, identical order across TMM / TPM / COUNTS
+  P4  1 protein_coding row per gene per matrix; TMM_pass_filter == TRUE
+  P5  gene row indices identical across matrices and equal to the frozen values
+  P6  matrix sample columns == the 289 manifest sample titles
+  P7  TMM and TPM are NOT log scaled -> log2(x+1) is the log-scale transform
+==============================================================================

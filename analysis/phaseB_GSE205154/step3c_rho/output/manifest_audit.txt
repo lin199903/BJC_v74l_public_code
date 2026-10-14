@@ -1,0 +1,121 @@
+==============================================================================
+STEP 3c-1  GSE205154  --  MANIFEST RE-VERIFICATION (value-blind)
+generated : 2026-09-28 12:25:35
+==============================================================================
+
+Governing rule obeyed by this script: the cohort is re-verified from the frozen
+manifest BEFORE any SIGLEC15 / ACP5 / MMP9 expression value is loaded. This script
+opens exactly one data file -- sample_manifest.csv -- and it contains only sample
+metadata and yes/no eligibility flags, never an expression measurement.
+
+--- G1  SHA-256 of the frozen manifest ---
+  file     : E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\sample_manifest.csv
+  computed : f76b81eceb0557cf4c1fee0138e9137a84508369f47ad163255a096af78c708b
+  expected : f76b81eceb0557cf4c1fee0138e9137a84508369f47ad163255a096af78c708b
+  source   : frozen_cohort_definition.md, top of file
+  [PASS] SHA-256 MATCHES the frozen value
+  [PASS] the same hash literal appears in frozen_cohort_definition.md
+
+--- G13  schema assertion: no expression column was read ---
+  [PASS] columns are exactly the 13 frozen metadata columns
+  [PASS] no column holds a SIGLEC15/ACP5/MMP9 measurement (only usability flags)
+
+--- G2  row count ---
+  [PASS] 289 data rows
+  gsm distinct      : 289
+  title distinct    : 289
+
+--- G11  gene usability flags (all 289) ---
+  [PASS] SIGLEC15: usable = yes for 289/289
+  [PASS] ACP5: usable = yes for 289/289
+  [PASS] MMP9: usable = yes for 289/289
+
+--- G12  platform disclosure string (all 289 must be identical) ---
+  GPL20301 (Illumina HiSeq 4000); RNA-Seq; FFPE xGEN Exome Research Panel v1.0 hybrid capture; kallisto 0.44.0 + tximport 1.12.1; GRCh38.p5 / gencode v24
+  [PASS] single platform string: GPL20301, explicitly exome-capture (FFPE xGEN Exome Research Panel v1.0 hybrid capture), not whole-transcriptome
+
+--- G10  every 'no' carries an exclusion_reason ---
+  [PASS] every non-eligible row has a written exclusion_reason
+
+--- G3/G4  eligibility counts ---
+  [PASS] eligible_for_main_meta : 216
+  [PASS] eligible_for_sensitivity: 71
+  [PASS] no sample is eligible for both analyses (frozen: 0)
+  [PASS] eligible for nothing       : 2
+
+--- G5  main set is patient-level: 216 specimens -> 216 distinct patients ---
+  [PASS] main: 216 specimens in 216 distinct patients -> one specimen per patient, AD-1 enforced
+  [PASS] no patient contributes more than one specimen to the main analysis
+
+--- G5b  the 218 primary specimens sit in 216 distinct patients (D4.2 material) ---
+  [PASS] 218 primary specimens (AD-4: specimens)
+  [PASS] 218 primary specimens in 216 distinct patients (214 with one primary specimen + 2 with two)
+
+--- G6  duplicate primary cores (D4.2): frozen rule reproduced ---
+  [PASS] exactly the two frozen duplicate cores: ['ST-00017945', 'ST-00019598']
+  core ST-00017945:
+      GSM6206194  ST-00017945-T        suffix=T    RETAINED (base label -T)
+      GSM6206193  ST-00017945-T2       suffix=T2   excluded from main by D4.2
+  [PASS] core ST-00017945: base-label ST-00017945-T is the one flagged eligible_for_main_meta
+  core ST-00019598:
+      GSM6206244  ST-00019598-T        suffix=T    RETAINED (base label -T)
+      GSM6206245  ST-00019598-T2       suffix=T2   excluded from main by D4.2
+  [PASS] core ST-00019598: base-label ST-00019598-T is the one flagged eligible_for_main_meta
+
+--- G5c  replicate-looking titles that are NOT within-compartment duplicates ---
+  GSM6206193  ST-00017945-T2       compartment=primary     base-label specimen in SAME core: ST-00017945-T
+  GSM6206205  ST-00020168-M2       compartment=metastatic  base-label specimen in SAME core: NONE
+  [PASS] ST-00020168-M2: no -M specimen in core ST-00020168 -> an M2-labelled metastasis from a distinct patient, NOT a within-compartment duplicate
+  GSM6206245  ST-00019598-T2       compartment=primary     base-label specimen in SAME core: ST-00019598-T
+
+--- G9  specimens eligible for nothing ---
+  [PASS] exactly ['GSM6206193', 'GSM6206245']
+  GSM6206193  ST-00017945-T2       reason: excluded from main meta-analysis: second primary specimen from patient ST-00017945 (group ['ST-00017945-T', 'ST-00017945-T2']); frozen one-specimen-per-patient rule retained ST-00017945-T | not in the prespecified metastatic sensitivity analysis: specimen is a primary tumour
+  GSM6206245  ST-00019598-T2       reason: excluded from main meta-analysis: second primary specimen from patient ST-00019598 (group ['ST-00019598-T', 'ST-00019598-T2']); frozen one-specimen-per-patient rule retained ST-00019598-T | not in the prespecified metastatic sensitivity analysis: specimen is a primary tumour
+
+--- G7  metastatic set: 71 specimens in 71 distinct cores ---
+  [PASS] met: 71 specimens in 71 distinct cores; duplication = none
+
+--- G8  cross-compartment patient overlap (AD-4) ---
+  [PASS] 10 patients contribute both a primary and a metastasis
+  ST-00004898   primary GSM6206231 ST-00004898-T          met GSM6206232 ST-00004898-M
+  ST-00006291   primary GSM6206066 ST-00006291-T          met GSM6206067 ST-00006291-M
+  ST-00007307   primary GSM6206060 ST-00007307-T          met GSM6206059 ST-00007307-M
+  ST-00010984   primary GSM6206079 ST-00010984-T          met GSM6206080 ST-00010984-M
+  ST-00014524   primary GSM6206121 ST-00014524-A-T        met GSM6206120 ST-00014524-M
+  ST-00015839   primary GSM6206142 ST-00015839-T          met GSM6206141 ST-00015839-M
+  ST-00017804   primary GSM6206176 ST-00017804-T          met GSM6206175 ST-00017804-M
+  ST-00017838   primary GSM6206187 ST-00017838-T          met GSM6206188 ST-00017838-M
+  ST-00019429   primary GSM6206272 ST-00019429-T          met GSM6206273 ST-00019429-M
+  ST-00019601   primary GSM6206275 ST-00019601-T          met GSM6206274 ST-00019601-M
+  [PASS] overlap-free metastatic subset: 61
+
+--- AD-5  F-suffix samples are primary (counted, not inferred biologically) ---
+  7 F-suffix samples; 7 of them eligible_for_main_meta
+      GSM6206233  ST-00021339-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+      GSM6206238  ST-00020208-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+      GSM6206241  ST-00020206-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+      GSM6206249  ST-00020215-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+      GSM6206285  ST-00020926-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+      GSM6206286  ST-00021340-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+      GSM6206287  ST-00021060-F        tumor_type_field=primary  tissue=Pancreas   main=yes
+  [PASS] 7 F-suffix samples
+  [PASS] all F-suffix samples classified primary by tumor type field
+
+--- AD-1 / compartment tally ---
+  {'primary': 218, 'metastatic': 71}
+  [PASS] 218 primary specimens / 71 metastatic specimens (AD-4: specimens, not patients)
+
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\sample_sets.json
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\manifest_verification.csv
+
+==============================================================================
+RESULT: ALL CHECKS PASSED -- frozen cohort reproduced exactly
+  G1  manifest SHA-256 MATCHES the frozen value
+  G3  main               n = 216   patient-level (216 specimens -> 216 distinct patients)
+  G4  met                n = 71    patient-level (71 specimens -> 71 distinct patients)
+  G8  met (overlap-free) n = 61
+  G9  excluded from everything: ['GSM6206193', 'GSM6206245']
+  G12 platform           : GPL20301 (Illumina HiSeq 4000); RNA-Seq; FFPE xGEN Exome Research Panel v1.0 hybrid capture; kallisto 0.44.0 + tximport 1.12.1; GRCh38.p5 / gencode v24
+  distinct patients, whole deposit: 277
+==============================================================================

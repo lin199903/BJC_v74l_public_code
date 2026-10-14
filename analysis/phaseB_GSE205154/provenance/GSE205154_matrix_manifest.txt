@@ -1,0 +1,15 @@
+COUNTS url    : https://ftp.ncbi.nlm.nih.gov/geo/series/GSE205nnn/GSE205154/suppl/GSE205154_Gene_Level_Counts_Estimates.txt.gz
+COUNTS file   : E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\data\GSE205154_Gene_Level_Counts_Estimates.txt.gz
+COUNTS bytes  : 30091494
+COUNTS sha256 : 4c7004cfe15a94d868e24cf651f0e5d05779709bf233a74b48b084efdf238fdc
+
+TMM url    : https://ftp.ncbi.nlm.nih.gov/geo/series/GSE205nnn/GSE205154/suppl/GSE205154_Gene_Level_TMM_Estimates.txt.gz
+TMM file   : E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\data\GSE205154_Gene_Level_TMM_Estimates.txt.gz
+TMM bytes  : 40598676
+TMM sha256 : 9f362bb06995e28d3f0f2297f89ddf0f1190235c76a1a8cfb5c199d8211895c3
+
+TPM url    : https://ftp.ncbi.nlm.nih.gov/geo/series/GSE205nnn/GSE205154/suppl/GSE205154_Gene_Level_TPM_Estimates.txt.gz
+TPM file   : E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\data\GSE205154_Gene_Level_TPM_Estimates.txt.gz
+TPM bytes  : 36708318
+TPM sha256 : 686582f0c00467de844d9ee93356e192da2c03c047f804f2b9d5270c4b62f152
+

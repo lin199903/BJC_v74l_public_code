@@ -1,0 +1,56 @@
+meta_results.csv has exactly the 3 required estimate rows :: 3 rows
+meta_results.csv has exactly the 12 required columns :: estimate_label,cohorts_included,k,pooled_rho,ci_low,ci_high,tau2,I2,Q,p_value,model,notes
+k values are 3, 4, 5 in order :: [3, 4, 5]
+only the five frozen bulk cohorts appear in any pooled estimate :: pooled=['GSE205154', 'GSE21501', 'GSE57495', 'GSE85916', 'TCGA_PAAD']
+no single-cell / snRNA cohort was pooled :: checked GSE278688/GSE278689/GSE212966/GSE156405/GSE155698
+cohort list length matches k in every row :: 
+k=3: pooled_rho 0.132332 quoted in results_summary.md :: 0.132332
+k=3: ci_low 0.110117 quoted in results_summary.md :: 0.110117
+k=3: ci_high 0.359917 quoted in results_summary.md :: 0.359917
+k=3: Q 0.369367 quoted in results_summary.md :: 0.369367
+k=3: p_value 0.143148 quoted in results_summary.md :: 0.143148
+k=3: tau2 5.628673589008228e-06 quoted in results_summary.md :: 5.628673589008228e-06
+k=3: I2 0.0 stated as 0 :: 0.0
+k=4: pooled_rho 0.132074 quoted in results_summary.md :: 0.132074
+k=4: ci_low 0.006107 quoted in results_summary.md :: 0.006107
+k=4: ci_high 0.265305 quoted in results_summary.md :: 0.265305
+k=4: Q 0.369422 quoted in results_summary.md :: 0.369422
+k=4: p_value 0.055754 quoted in results_summary.md :: 0.055754
+k=4: tau2 5.628673589008228e-06 quoted in results_summary.md :: 5.628673589008228e-06
+k=4: I2 0.0 stated as 0 :: 0.0
+k=5: pooled_rho 0.139682 quoted in results_summary.md :: 0.139682
+k=5: ci_low 0.031725 quoted in results_summary.md :: 0.031725
+k=5: ci_high 0.244417 quoted in results_summary.md :: 0.244417
+k=5: Q 0.532291 quoted in results_summary.md :: 0.532291
+k=5: p_value 0.023048 quoted in results_summary.md :: 0.023048
+k=5: tau2 5.628673589008228e-06 quoted in results_summary.md :: 5.628673589008228e-06
+k=5: I2 0.0 stated as 0 :: 0.0
+3-cohort row rounds to the published rho 0.132 :: 0.132332
+3-cohort row rounds to the published CI -0.110 :: -0.110117
+3-cohort row rounds to the published CI +0.360 :: 0.359917
+summary states the published estimate is unreplaced :: 
+the GSE21501 specimen-level sentence is carried VERBATIM (exact substring) :: 167 chars
+the sentence is carried exactly once :: 1 occurrence(s)
+the <=129 patient bound is stated, not an exact count :: U+2264 form: True; ascii form: False
+the 4- and 5-cohort intervals genuinely disagree about excluding zero :: 4-cohort crosses=True; 5-cohort crosses=False
+summary says the 4-cohort interval crosses zero :: 
+summary reports both and selects neither :: 
+GSE205154 weight share quoted (40.56%) :: 40.5600%
+GSE21501 weight share quoted (19.36%) :: 19.3581%
+forest_inputs.csv has 3+4+5 = 12 rows, one per cohort per model :: 12 rows
+every forest row carries the source file and its sha256 :: 
+GSE21501 is labelled specimen-level and no other cohort is :: patient;specimen (<=129 patients)
+3-cohort published (reproduced): forest weights reconcile with the se actually used :: implied 0.056634351138 vs 0.056634351138
+4-cohort secondary extension: forest weights reconcile with the se actually used :: implied 0.043663579896 vs 0.043663579896
+5-cohort sensitivity: forest weights reconcile with the se actually used :: implied 0.039210265105 vs 0.039210265105
+C3_unmodified_HK CI in the summary matches verification_controls.csv :: +0.083906..+0.179626
+C3b_unmodified_HK_published_3cohort CI in the summary matches verification_controls.csv :: +0.028418..+0.233417
+C6 single-cohort sign-flip delta quoted (0.086) matches the control file :: 0.085899
+metafor cross-check log records 15 checks, 0 failed :: 
+metafor log confirms Q agreement to 2.2e-16 :: 
+metafor log confirms the modified-HK rule matches to <=5.6e-17 or better :: 
+metafor log attributes the CI gap to the tau2 difference :: 
+summary quotes the cross-check findings :: 
+provenance/source_hashes.txt records the manuscript module sha256 :: 
+provenance/source_hashes.txt records the random_effects_meta() source sha256 :: 
+summary quotes both source hashes :: 

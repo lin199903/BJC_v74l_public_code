@@ -1,0 +1,13 @@
+GPL4133 platform annotation manifest
+generated : 2026-09-28 09:41:25
+url       : https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL4nnn/GPL4133/annot/GPL4133.annot.gz
+file      : E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE21501\_probe\GPL4133.annot.gz
+bytes     : 9258564
+sha256    : 0b82bf430eb95b985d0ca1043bb9ff98678d3ead613f74cb65ec5ae0416c3f85
+rows      : 45220
+symbol col: Gene symbol (index 2)
+
+target probes:
+  SIGLEC15  31474
+  ACP5      10450
+  MMP9      1570, 1678, 14430, 14852, 21363, 25413, 28592, 28675, 40398, 44612

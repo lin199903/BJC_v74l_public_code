@@ -1,0 +1,77 @@
+GSE21501 Phase B step 3c-2 -- sessionInfo
+generated : 2026-09-28 12:27:21 (local)
+
+==============================================================================
+PYTHON
+==============================================================================
+  sys.version        : 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]
+  sys.executable     : C:\Users\<user>\AppData\Local\Programs\Python\Python313\python.exe
+  platform.python    : CPython 3.13.0
+  platform.platform  : Windows-11-10.0.26200-SP0
+  platform.machine   : AMD64
+  os.cpu_count       : 24
+
+  packages (the ones that contribute a number to this step):
+    numpy          2.4.6
+    pandas         2.3.3
+    scipy          1.18.0
+    statsmodels    0.14.6
+
+  statistical machinery actually used:
+    scipy.stats.spearmanr       rho and the asymptotic p
+    scipy.stats.rankdata        ranks in the bootstrap and the permutation
+    numpy.random.default_rng    PCG64, the only RNG in this step
+    numpy.nanstd/nanmean/nanquantile, pandas groupby.mean
+
+==============================================================================
+R
+==============================================================================
+  Rscript (R) version 4.5.1 (2025-06-13)  (C:\Program Files\R\R-4.5.1\bin\Rscript.exe)
+  R was NOT used by this step. Every number here was produced in Python by
+  scripts/01_extract_expression.py, scripts/02_analyse.py and
+  scripts/03_verify_against_manuscript.py. The archived manuscript module that
+  the verification executes is itself Python.
+
+==============================================================================
+SHELL / TOOLING
+==============================================================================
+  shell              : Windows PowerShell 5.1 (powershell.exe).
+                       'pwsh' is NOT on PATH on this host, so no logger here
+                       invokes it.
+  no network access was needed by any stage of this step: the deposit and the
+  platform annotation were already local, and the archived manuscript module is
+  read from disk.
+
+==============================================================================
+SEEDS AND RESAMPLING
+==============================================================================
+  master seed        : 15072026   (frozen_cohort_definition.md S9)
+  n resamples        : 10000  (frozen S9)
+  primary addressing : generator seeded directly with 15072026 and consumed in
+                       the manuscript's call order (bootstrap, then permutation)
+  other cells        : seed = int(sha256(f'{master}|{label}').hexdigest()[:16],
+                       16) % 2**32 -- see output/seed_registry.json
+
+==============================================================================
+ARTEFACT HASHES (sha256)
+==============================================================================
+  3e11938ae5c7e682c9e53aad93d051579764a4ec8173d69d571dbeda0f3ac4e4  ../sample_manifest.csv  (frozen)
+  0b82bf430eb95b985d0ca1043bb9ff98678d3ead613f74cb65ec5ae0416c3f85  ../_probe/GPL4133.annot.gz
+  1bbbd9d2f1a89b26b73b32ef1e781b5ad46aa2f80ebc1d8c94d0ac5dcb6d9b7b  ../_probe/GSE21501_series_matrix.txt.gz
+  7b6a311a0a73835f66596b7ea21070a6355c1fe6de44b518394dfe89f7c4334e  manuscript module (analysis_F_cross_scale.py, v47 archive)
+
+  outputs:
+    b053599c7a25085b4d5c698d8742b3159739c0451190c29a0eb7e7ae7c4f7119  output/descriptive_components.csv
+    41413400a17b3761df5efa49aed3f34934f26caac63e0b252bece3893ddf9e47  output/estimate_table_full.csv
+    f627b5ab744059371ea872736797713f8633738e2c226c31e7d6fdae8dfb2a88  output/manuscript_verification.csv
+    27bdd9532ce79ca6ed3b1606b8a81afab059b238e60f10a47598ced6c2caacc3  output/primary_result.csv
+    1452cf4005b027dcf2b0b225745fa7e668944b6ae99cc84a12fa32d90f3cd28a  output/sensitivity_results.csv
+    764d936939cc248cc7249d6a7eac0f786841f6c641032231cf4409dfd6f4f1d9  output/verification_controls.csv
+    f627b5ab744059371ea872736797713f8633738e2c226c31e7d6fdae8dfb2a88  output/manuscript_verification.csv
+  scripts:
+    998bc66d9dc8397eb619cdeb797a308a33bde7496dcb5a0e05ef0a1621833474  scripts/01_extract_expression.py
+    efb70ab4fd7741be373959915ef9081557caeffe77751f1a35e260be2c591efa  scripts/02_analyse.py
+    e08375ef24dd608c084424df21beffa471a5e009c90bb2ecad8b612e331bab41  scripts/03_verify_against_manuscript.py
+    d7d9fa764111211588b664f6f44b1924cbbf077b103e0dd7e380b3fa02c883a1  scripts/04_report.py
+    a855426b4761851c000608ccc2e6b562553f1c8ff939c0cab5f451128b1dc6c3  scripts/05_final_gate.py
+

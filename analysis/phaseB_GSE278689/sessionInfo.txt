@@ -1,0 +1,61 @@
+==============================================================================
+sessionInfo -- Phase B step 2, GSE278689 (snRNA) -- cross-modality sensitivity analysis
+==============================================================================
+generated            : 2026-09-28 07:26:13 中国标准时间
+working directory    : E:\Tex\HMlong
+
+--- operating system ---
+platform             : Windows-11-10.0.26200-SP0
+machine / processor  : AMD64 / Intel64 Family 6 Model 198 Stepping 2, GenuineIntel
+python               : 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]
+python executable    : C:\Users\<user>\AppData\Local\Programs\Python\Python313\python.exe
+
+--- python packages ---
+numpy                : 2.4.6
+pandas               : 2.3.3
+scipy                : 1.18.0
+anndata              : 0.12.18
+scanpy               : 1.12.1
+h5py                 : 3.16.0
+statsmodels          : 0.14.6
+
+--- R ---
+Rscript (R) version 4.5.1 (2025-06-13)
+data.table           : 1.18.0
+Matrix               : 1.7-4
+boot                 : 1.3-32
+stats                : 4.5.1
+Seurat               : 5.4.0
+SeuratObject         : 5.3.0
+scran                : 1.38.1
+scater               : 1.38.0
+
+--- frozen constants ---
+seed                 : 15072026
+bootstrap resamples  : 10000
+z-score ddof         : 0 (population SD), matching zscore_columns()
+detection            : non-zero RAW deposited count
+normalisation        : CP10K then log1p (deposit verified as raw integer counts)
+programme score      : ACP5 + MMP9 only; SIGLEC15 never enters it
+contrast             : mean(score | detectable) - mean(score | non-detectable)
+sample weighting     : equal
+
+--- sample accession map (GEO series matrix -> barcode prefix) ---
+GSM         patient   barcode prefix    title                     
+GSM8561922  PA40      2048540_FFPE      PA40, Tumor, snRNA        
+GSM8561923  PA21      2107809_FFPE      PA21, Tumor, snRNA        
+GSM8561924  PA85      1869485_FFPE      PA85, Tumor, snRNA        
+GSM8561925  PA98      2151198_FFPE      PA98, Tumor, snRNA        
+GSM8561926  PA72      2051072_FFPE      PA72, Tumor, snRNA        
+GSM8561927  PA91      1942191_FFPE      PA91, Tumor, snRNA        
+GSM8561928  PA29      2049529_FFPE      PA29, Tumor, snRNA        
+GSM8561929  PA24      2021124_FFPE      PA24, Tumor, snRNA        
+
+Series title         : Integrated Single-Cell and Spatial Transcriptomics Uncover
+                       Distinct Cellular Subtypes Involved in Neural Invasion in
+                       PDAC [snRNA-Seq]
+SubSeries of         : GSE278694 (SuperSeries; shares patients with GSE278688/GSE278687)
+Platform             : 10x Genomics, Cell Ranger 7.1.0, GRCh38, Illumina NovaSeq 6000
+Modality             : snRNA (single NUCLEI) -- NOT scRNA. This run is a
+                       modality-specific sensitivity analysis and is never pooled.
+==============================================================================

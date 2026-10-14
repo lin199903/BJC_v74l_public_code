@@ -1,0 +1,76 @@
+==============================================================================
+STEP 3c-1  GSE205154  --  INDEPENDENT R CROSS-CHECK
+generated : 2026-09-28 12:27:15
+==============================================================================
+R version  : R version 4.5.1 (2025-06-13 ucrt)
+platform   : x86_64-w64-mingw32
+--- re-deriving the sample sets from sample_manifest.csv (not from the JSON) ---
+  manifest rows            : 289
+  distinct specimen cores  : 277
+  [PASS] R re-derivation: main n = 216
+  [PASS] R re-derivation: met n = 71
+  [PASS] R re-derivation: main specimens sit in 216 distinct patients (AD-1)
+  [PASS] R re-derivation: 10 cross-compartment patients -> overlap-free met n = 61
+  duplicate primary cores  : ST-00017945, ST-00019598
+  [PASS] R re-derivation: exactly the two frozen duplicate cores ST-00017945 / ST-00019598
+--- loading the 3-gene extraction ---
+  rows: 9   sample columns: 289
+  [PASS] R: expression sample columns == the 289 manifest titles
+==============================================================================
+PRIMARY  re-derived independently in R
+==============================================================================
+  rho            = +0.131695
+  n              = 216
+  95% CI (boot)  = [-0.003817, +0.262130]  (10000 resamples, seed 15072026)
+  95% CI (Fisher) = [-0.001830, +0.260606]
+==============================================================================
+SENSITIVITIES  re-derived independently in R
+==============================================================================
+  S1 log2(TPM+1)              rho = +0.154714  [+0.018834, +0.284594]  n = 216
+  S2 unlogged TMM             rho = +0.145551  [+0.013172, +0.274192]  n = 216
+  S3 duplicates pair-averaged rho = +0.135233  [-0.000373, +0.265323]  n = 216
+  S4 metastatic specimens     rho = -0.035144  [-0.262410, +0.215878]  n = 71
+  S5 metastatic patients(61)  rho = +0.023004  [-0.232762, +0.284288]  n = 61
+==============================================================================
+CONTROLS CAPABLE OF FAILING  (re-run in R)
+==============================================================================
+  C-A2 wrong axis (across genes)  rho = -0.201615   vs primary +0.131695   |delta| = 0.333310
+       correct-convention score sd = 0.8257;  wrong-axis score sd = 0.0615
+  C-B  SIGLEC15 rank disagreements TMM vs TPM: 202/216 (Spearman over 289 = +0.970730)
+  C-C  raw counts, no log         rho = +0.427440   |delta| = 0.295745
+  C-C2 log2(counts+1)             rho = +0.387303   |delta| = 0.255608
+  C-D  218 specimens as 218 units rho = +0.132072   n = 218
+==============================================================================
+AGREEMENT WITH THE PYTHON PIPELINE
+==============================================================================
+  PRIMARY (log2(TMM+1), n=216)   R = +0.131695   py = +0.131695   |delta| = 2.78e-17  OK
+                                   boot CI  R = [-0.0038, +0.2621]  py = [-0.0024, +0.2648]  max|delta| = 0.0027  OK (within MC tolerance)
+  S1 log2(TPM+1)                 R = +0.154714   py = +0.154714   |delta| = 2.78e-17  OK
+                                   boot CI  R = [+0.0188, +0.2846]  py = [+0.0175, +0.2904]  max|delta| = 0.0058  OK (within MC tolerance)
+  S2 unlogged TMM                R = +0.145551   py = +0.145551   |delta| = 0.00e+00  OK
+                                   boot CI  R = [+0.0132, +0.2742]  py = [+0.0103, +0.2776]  max|delta| = 0.0034  OK (within MC tolerance)
+  S3 duplicates pair-averaged    R = +0.135233   py = +0.135233   |delta| = 2.78e-17  OK
+                                   boot CI  R = [-0.0004, +0.2653]  py = [+0.0012, +0.2694]  max|delta| = 0.0041  OK (within MC tolerance)
+  S4 metastatic n=71             R = -0.035144   py = -0.035144   |delta| = 6.94e-18  OK
+                                   boot CI  R = [-0.2624, +0.2159]  py = [-0.2664, +0.2002]  max|delta| = 0.0156  OK (within MC tolerance)
+  S5 metastatic n=61             R = +0.023004   py = +0.023004   |delta| = 0.00e+00  OK
+                                   boot CI  R = [-0.2328, +0.2843]  py = [-0.2327, +0.2849]  max|delta| = 0.0007  OK (within MC tolerance)
+  X1/C-D 218 specimens           R = +0.132072   py = +0.132072   |delta| = 0.00e+00  OK
+  C-A2 wrong axis                R = -0.201615   py = -0.201615   |delta| = 2.78e-17  OK
+  C-C raw counts                 R = +0.427440   py = +0.427440   |delta| = 5.55e-17  OK
+  C-C2 log2(counts+1)            R = +0.387303   py = +0.387303   |delta| = 5.55e-17  OK
+  C-A degenerate check           py reports C-A as NA (undefined, constant score) -- R agrees by
+                                 construction: the 2-gene per-sample z forces ACP5_z = -MMP9_z
+                                 and the mean-z score is numerically constant (spread 1.3e-13).
+  Fisher-z interval check (PRIMARY):
+    R  = [-0.001830, +0.260606]
+    py = [-0.001830, +0.260606]
+  [PASS] Fisher-z interval agrees to 1e-6 between R and Python
+  CONTROL GATE (R):
+  [PASS] R: wrong-axis control is materially different (-0.2016 vs +0.1317)
+  [PASS] R: SIGLEC15 TMM/TPM rank orderings differ in 202/216 specimens -> C-B correctly reported NOT APPLICABLE
+==============================================================================
+RESULT: ALL R CROSS-CHECKS PASSED
+  every point estimate reproduced independently in base R to < 1e-9
+  bootstrap endpoints agree within the Monte-Carlo tolerance (different RNG)
+==============================================================================

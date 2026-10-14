@@ -1,0 +1,64 @@
+﻿# sessionInfo -- Phase B step 1, GSE278688 (FROZEN RUN)
+# generated 2026-09-28 01:29:31 +08:00
+
+=== R ===
+R version 4.5.1 (2025-06-13 ucrt) 
+platform : x86_64-w64-mingw32 
+nickname : Great Square Root 
+
+=== sessionInfo() ===
+R version 4.5.1 (2025-06-13 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] LC_COLLATE=Chinese (Simplified)_China.utf8 
+[2] LC_CTYPE=Chinese (Simplified)_China.utf8   
+[3] LC_MONETARY=Chinese (Simplified)_China.utf8
+[4] LC_NUMERIC=C                               
+[5] LC_TIME=Chinese (Simplified)_China.utf8    
+
+time zone: Asia/Shanghai
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.5.1
+
+=== explicitly used packages ===
+  data.table   1.18.0
+  Matrix       1.7.4
+  boot         1.3.32
+  statmod      1.5.2
+  jsonlite     2.0.0
+
+python : E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE278688\scripts\session_info.py:13: FutureWarning: `__version__` is
+ deprecated, use `importlib.metadata.version('anndata')` instead.
+At line:8 char:1
++ python "$root\scripts\session_info.py" 2>&1 | Out-File $out -Append - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (E:\Tex\HMlong\B...ata')` instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  print(f"  {name:14s} {getattr(m, '__version__', 'unknown')}")
+E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE278688\scripts\session_info.py:13: FutureWarning: `__version__` is deprecat
+ed, use `importlib.metadata.version('scanpy')` instead
+  print(f"  {name:14s} {getattr(m, '__version__', 'unknown')}")
+=== Python ===
+version   : 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]
+executable: C:\Users\<user>\AppData\Local\Programs\Python\Python313\python.exe
+platform  : Windows-11-10.0.26200-SP0
+
+=== packages used ===
+  numpy          2.4.6
+  pandas         2.3.3
+  scipy          1.18.0
+  anndata        0.12.18
+  scanpy         1.12.1
+  h5py           3.16.0
+  statsmodels    0.14.6

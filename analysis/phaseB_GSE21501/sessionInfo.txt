@@ -1,0 +1,69 @@
+GSE21501 Phase B step 3b -- sessionInfo
+generated : 2026-09-28 09:50:01 (local)
+
+==============================================================================
+PYTHON
+==============================================================================
+  sys.version        : 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]
+  sys.executable     : C:\Users\<user>\AppData\Local\Programs\Python\Python313\python.exe
+  platform.python    : CPython 3.13.0
+  platform.platform  : Windows-11-10.0.26200-SP0
+  platform.machine   : AMD64
+
+  packages:
+    numpy          2.4.6
+    pandas         2.3.3
+    scipy          1.18.0
+    statsmodels    0.14.6
+    matplotlib     3.11.0
+    requests       2.34.2
+    lxml           6.1.1
+    GEOparse       2.0.4
+    h5py           3.16.0
+    anndata        0.12.18
+
+==============================================================================
+R
+==============================================================================
+  R was NOT used by this step. The GSE21501 manifest, probe mapping and
+  duplicate resolution are metadata operations and were performed in
+  Python only; no R package contributes to any number in this directory.
+  Installed on this machine but unused here: C:\Program Files\R\R-4.5.1
+
+==============================================================================
+SHELL / TOOLING
+==============================================================================
+  shell              : Windows PowerShell 5.1 (powershell.exe);
+                       'pwsh' is NOT on PATH on this host
+  downloader         : PowerShell Invoke-WebRequest (single connection)
+  FTP host           : https://ftp.ncbi.nlm.nih.gov/geo/
+  GEO query endpoint : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi
+
+==============================================================================
+ARTEFACT HASHES (sha256)
+==============================================================================
+  3e11938ae5c7e682c9e53aad93d051579764a4ec8173d69d571dbeda0f3ac4e4  sample_manifest.csv  (50054 bytes)
+  c16f41aabcfe1c7359811918157a2bc5531f307202ec68ce3f45402ed91342de  frozen_cohort_definition.md  (45952 bytes)
+  20c76009542b6525b99c1324746b1ea760411767a7d453d33e1091c30a40bbc1  failed_or_excluded.md  (17257 bytes)
+  dad47de5544efdc3648154af7c2e470e7bc0af7605bae9691faf7146e890f391  run_log.txt  (12168 bytes)
+  1bbbd9d2f1a89b26b73b32ef1e781b5ad46aa2f80ebc1d8c94d0ac5dcb6d9b7b  _probe/GSE21501_series_matrix.txt.gz  (12575998 bytes)
+  29fbeb096762985ed1002c3a85ec51a9b1fe021e9fa818c10ee4cd97ea3a5d0f  _probe/GSE21501_series_matrix.header.txt  (201681 bytes)
+  7b911201628a1626b7c504b598c4ab84242379c15b6b73c9722db9c0e708b2d1  _probe/GSE21501_gsm_brief.txt  (351980 bytes)
+  0b82bf430eb95b985d0ca1043bb9ff98678d3ead613f74cb65ec5ae0416c3f85  _probe/GPL4133.annot.gz  (9258564 bytes)
+  e079ad72e7baa0bf1759108fe56191eb2097037ceb8dd2f1ba12afafed0172bc  _probe/GSE21501_probe_mapping.json  (4994 bytes)
+  d742e80845fe5550c8e732a7c70d058324c08ad3f62f93cdc364e0d62cf98965  _probe/GSE21501_duplicate_resolution.csv  (737 bytes)
+  3da0728a86fc716a46bfb51484c4c80a1c533fc51e197ae3677ac8672e1864b3  _probe/GSE21501_sample_metadata.tsv  (85301 bytes)
+  919798c85cfd15922c68a66673d2d5614cc022835d73164f8c727b6db93acdc4  _probe/GSE21501_patient_identity.txt  (7847 bytes)
+  07d95bfb0e51116772ec558776f59e607f33ff219e6439b063f7704f49916106  _probe/GSE21501_overlap_check.txt  (2924 bytes)
+  e83323dfc274bb719ad21f1398df70ac093b394d585f896d7bd145e575f4a185  _probe/GSE21501_publication_evidence.txt  (8353 bytes)
+  4a834057aaaf32898d5dde241714fcc98d06ef1c3006be65382254146a2ed560  output/exclusion_arithmetic.txt  (7715 bytes)
+  7cfab0feee89f9c79a7d3c61bd2b4aba48757e7249c5b85a5fc346fb7a5f0f0c  output/exclusion_arithmetic.csv  (634 bytes)
+  7fe30453df3838850e90fe31607538505bcb3d3c95c935d102010b784c872c6f  provenance/GSE21501_manifest_provenance.txt  (14003 bytes)
+  c9e140fd19b474673f2b952b1b9bd7c626c31e80a9e91b708e9b14acba185df8  provenance/GPL4133_annotation_manifest.txt  (542 bytes)
+
+  Note: GSE21501_family.soft.gz was NOT downloaded (187,687,633 bytes; the
+  single-connection transfer stalled). See failed_or_excluded.md. Nothing in
+  this directory depends on it: every sample-level field it would have
+  supplied is present in the series-matrix header and, independently, in the
+  GEO brief GSM records.
+

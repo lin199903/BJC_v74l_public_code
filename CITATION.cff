@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this analysis code, please cite the article and this repository."
+title: "Cross-scale evaluation of SIGLEC15 RNA for measurement of an ACP5/MMP9-high myeloid state in pancreatic ductal adenocarcinoma — analysis code"
+authors:
+  - family-names: "Lin"
+    given-names: "Junyi"
+  - family-names: "Huang"
+    given-names: "Yan"
+  - family-names: "Hou"
+    given-names: "Molong"
+    orcid: "https://orcid.org/0009-0007-5148-1034"
+type: software
+version: "v1.0"
+date-released: "2026-10-14"
+license: MIT
+repository-code: "https://github.com/lin199903/siglec15-pdac-crossscale-measurement"
+url: "https://github.com/lin199903/siglec15-pdac-crossscale-measurement/releases/tag/v1.0"
+keywords:
+  - SIGLEC15
+  - ACP5
+  - MMP9
+  - pancreatic ductal adenocarcinoma
+  - cross-scale measurement
+  - single-cell RNA sequencing
+  - spatial transcriptomics
+  - reproducibility

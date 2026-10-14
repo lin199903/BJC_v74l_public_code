@@ -1,0 +1,202 @@
+==============================================================================
+STEP 3c-1  GSE205154  --  PRIMARY ESTIMATE AND SENSITIVITIES
+generated : 2026-09-28 12:27:07
+==============================================================================
+
+PLATFORM DISCLOSURE (applies to every result in this directory):
+  GPL20301; Illumina HiSeq 4000; FFPE xGEN Exome Research Panel v1.0 hybrid capture -- EXOME-CAPTURE bulk RNA-seq, NOT whole-transcriptome; admissible because only within-cohort ranks are used
+
+--- REUSE: importing the manuscript's own scoring functions ---
+  source : E:\Tex\HMlong\npjPrecOncol\FINAL_SUBMISSION_v6\BMC_MEDICINE_SUBMISSION_v47\_archives_translate\Additional_file_2_Analysis_archive_v39\scripts\analysis_F_cross_scale.py
+  sha256 : 7b6a311a0a73835f66596b7ea21070a6355c1fe6de44b518394dfe89f7c4334e
+  [PASS] v39 analysis archive found
+
+  functions reused VERBATIM from that file (source hashes below):
+    zscore_columns             6 lines  sha256=a1f5e307baac389aaf1e9211db356480...
+    required_gene_count        4 lines  sha256=f1db9e340b54e587680f3156ddcaa8c0...
+    score_program              6 lines  sha256=54b0fcc43ba59c5d247fedd664864d2e...
+    spearman_bootstrap        13 lines  sha256=abf8bf867efd86cdb7c9834c8b43e470...
+    permutation_p             10 lines  sha256=f856043e5db89af6d8bc937c7f2eee46...
+    random_effects_meta       42 lines  sha256=ebedcff2d32217486be94302266cb3b6...
+  [PASS] PRIMARY program = Derosiers_ACP5_MMP9_core (frozen)
+  [PASS] program members = ['ACP5', 'MMP9'] (frozen: ACP5 then MMP9)
+  [PASS] TARGET = SIGLEC15 (frozen)
+  [PASS] required_gene_count(PRIMARY) = 2 -> both genes required
+  [PASS] archive seed/engine = 15072026 / 10000 resamples (matches the frozen rule)
+
+  frozen score-construction text, echoed from the running module:
+    z    = (x - nanmean(x, axis=0)) / nanstd(x, axis=0, ddof=0)   # ACROSS SAMPLES
+    score = nanmean(z[:, ACP5], z[:, MMP9])                       # the mean-z rule
+    rho  = spearman(samples[SIGLEC15], score)
+
+
+--- frozen sample sets (from sample_sets.json, produced by script 01) ---
+  main              n=216  level=patient  distinct patients=216
+  met_full          n=71   level=patient  distinct patients=71
+  met_overlapfree   n=61   level=patient  distinct patients=61
+  [PASS] manifest SHA-256 verified by script 01 (still matches the frozen value)
+
+--- expression frame: E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\expression_3genes.csv ---
+  9 rows x 295 columns; representations ['COUNTS', 'TMM', 'TPM']; genes ['ACP5', 'MMP9', 'SIGLEC15']
+  [PASS] 289 sample columns
+  [PASS] expression sample columns == ALL 289 frozen manifest sample titles (including the two specimens eligible for nothing, which stay in the frame but enter no analysis)
+  [PASS] the 216 main + 71 met sets cover 287 of the 289 specimens; the 2 uncovered are exactly the D4.2-excluded specimens (216 + 71 + 2 = 289)
+
+--- AD-2 scope check: the transform can move only the ACP5/MMP9 score side ---
+  [PASS] TMM: ranks of SIGLEC15 identical before and after log2(x+1) -> SIGLEC15 side is transform-invariant
+  [PASS] TMM: SIGLEC15 non-negative, so log2(x+1) is strictly monotone
+  [PASS] TPM: ranks of SIGLEC15 identical before and after log2(x+1) -> SIGLEC15 side is transform-invariant
+  [PASS] TPM: SIGLEC15 non-negative, so log2(x+1) is strictly monotone
+  [PASS] COUNTS: ranks of SIGLEC15 identical before and after log2(x+1) -> SIGLEC15 side is transform-invariant
+  [PASS] COUNTS: SIGLEC15 non-negative, so log2(x+1) is strictly monotone
+
+==============================================================================
+PRIMARY ANALYSIS  (AD-2 primary representation log2(TMM+1); AD-1 patient unit)
+==============================================================================
+  n = 216 primary specimens = 216 distinct patients (AD-1)
+  [PASS] n = 216
+
+  rho            = +0.131695
+  n              = 216
+  95% CI (boot)  = [-0.002382, +0.264782]   <- nonparametric bootstrap percentile interval (manuscript spearman_bootstrap(); not BCa), 10000 resamples, seed 15072026
+  95% CI (Fisher) = [-0.001830, +0.260606]   <- asymptotic, SE = 1/sqrt(n-3)
+  asymptotic p   = 0.0532724
+  permutation p  = 0.0531947  (10000 permutations, seed 15072026)
+  [PASS] hand-rolled Spearman equals scipy.stats.spearmanr (rho only; scipy also agrees)
+  [PASS] bootstrap function reports the same point estimate as the direct computation
+
+==============================================================================
+PRESPECIFIED SENSITIVITIES
+==============================================================================
+
+S1  AD-2(i)  log2(TPM+1), primary compartment, n=216
+    rho = +0.154714   CI [+0.017534, +0.290416]
+
+S2  AD-2(ii)  TMM as supplied, no log transform, primary compartment, n=216
+    rho = +0.145551   CI [+0.010283, +0.277618]
+
+S3  D4.5  duplicates AVERAGED at the expression level (not selected), primary compartment
+    AD-3: this is a sensitivity only and never replaces the primary result.
+    pairs averaged: ST-00017945-T + ST-00017945-T2 (core ST-00017945); ST-00019598-T + ST-00019598-T2 (core ST-00019598)
+  [PASS] 218 primary specimens for the averaging variant
+    averaged ST-00017945-T with ST-00017945-T2
+    averaged ST-00019598-T with ST-00019598-T2
+  [PASS] 216 analysis rows after averaging the two duplicate pairs (AD-1: still one row per patient)
+    rho = +0.135233   CI [+0.001246, +0.269420]
+
+S4  metastatic compartment, n=71 SPECIMENS in 71 distinct patients (AD-4)
+    rho = -0.035144   CI [-0.266419, +0.200245]
+
+S5  metastatic compartment, n=61 overlap-free PATIENTS (AD-4)
+    rho = +0.023004   CI [-0.232710, +0.284942]
+
+==============================================================================
+AD-1 / D4.5 VARIANTS  (reported for the author; NOT sensitivities, NOT primary)
+==============================================================================
+
+X1  AD-1 variant the author ruled against: all 218 primary SPECIMENS treated as
+    218 independent units (the two duplicate patients each contributing twice)
+    rho = +0.132072   CI [-0.003460, +0.265198]   n = 218
+
+X2  D4.5 alternative: BOTH members of each duplicate pair retained instead of one
+    selected. NOTE -- X1 and X2 are the SAME analytic set (216 base-label specimens
+    + the 2 excluded twins = all 218 primary specimens); they are listed separately
+    only because they are reached from two different frozen rules (the AD-1 unit
+    question and the D4.5 aggregation question). Their estimates are therefore
+    identical BY CONSTRUCTION, not by coincidence.
+    rho = +0.132072   CI [-0.003460, +0.265198]   n = 218
+  [PASS] X1 and X2 give identical estimates, confirming they are the same 218-specimen set
+
+==============================================================================
+CONTROLS CAPABLE OF FAILING
+==============================================================================
+Each control below CAN come out wrong. C-A, C-C and C-D are wrong-by-design and
+are required to differ materially from the primary; C-B is an invariance claim
+that is tested rather than assumed.
+
+C-A  WRONG CONVENTION: z-standardise ACROSS GENES instead of across samples
+     (zscore_columns applied to the samples x genes frame with axis semantics
+      deliberately changed to the orthogonally wrong axis)
+     rho(wrong axis) = NA -- UNDEFINED (constant score)   vs primary +0.131695
+     score spread = 1.3e-13 (relative to max |score| = 1)
+     score is numerically constant: True
+     -> with only two genes, per-sample standardisation forces ACP5_z = -MMP9_z
+        in every sample, so the mean-z score collapses to a constant. The wrong
+        axis does not merely shift the answer, it destroys the construct.
+     NOTE: rho is reported as NA here, not as a number. Spearman on a constant
+        vector is undefined, and the residual spread is pure float round-off
+        (1.3e-13): printing its correlation would fabricate a spurious value.
+
+C-A2 WRONG CONVENTION (non-degenerate): standardise ACROSS GENES using all three
+     genes of the frame, then score from the ACP5/MMP9 columns
+     rho = -0.201615   vs primary +0.131695   |delta| = 0.333310
+     scale diagnostic: correct score sd = 0.8237; wrong-axis score sd = 0.0614
+  [PASS] C-A2 score is non-degenerate (non-zero spread) -- the control tests a real alternative convention rather than an empty vector
+
+     sanity: correct convention, frame in the manuscript's orientation  -> rho = +0.131695
+
+C-B  INVARIANCE TEST: SIGLEC15 taken from log2(TPM+1) while the score stays on
+     log2(TMM+1). SIGLEC15 enters only through ranks, so the question is whether
+     TMM and TPM order SIGLEC15 identically -- counted, not assumed.
+     specimens with a different SIGLEC15 rank under TMM vs TPM: 202/216
+     Spearman(log2(TMM+1) SIGLEC15, log2(TPM+1) SIGLEC15) over all 289 specimens: +0.970730
+     tie structure over all 289 specimens:
+       log2(TMM+1)  distinct values = 289   largest tie group =   1   specimens sharing a value with another =   0
+       log2(TPM+1)  distinct values = 289   largest tie group =   1   specimens sharing a value with another =   0
+     SIGLEC15 rank change within the 216 main specimens: mean |delta rank| = 10.44 of 216, max = 52
+     no exact ties exist in either representation, so the 202/216 disagreement
+     is not a tie-breaking artefact: TMM and TPM simply are not monotone in one
+     another, and re-scaling moves SIGLEC15 specimens across each other.
+     -> the frozen claim that a monotone transform leaves the SIGLEC15 side alone
+        holds for a transform OF A GIVEN MATRIX (asserted above and passing); it
+        does NOT extend to swapping one supplied matrix for another.
+     -> rank orderings DISAGREE, so the two representations are not
+        interchangeable for SIGLEC15 on this data and the invariance test
+        is reported as NOT APPLICABLE rather than as a pass.
+
+C-C  WRONG CONVENTION: raw counts z-standardised with NO log transform
+     rho = +0.427440   vs primary +0.131695   |delta| = 0.295745
+
+C-C2 counts on a log2 scale (the correct handling, for contrast)
+     rho = +0.387303   vs primary +0.131695   |delta| = 0.255608
+
+C-D  MIS-SPECIFIED UNIT: all 218 primary specimens treated as 218 independent
+     patients (the AD-1 variant the author ruled against)
+     rho = +0.132072   n = 218   vs primary +0.131695 (n = 216)
+     AD-1 changes n by 2 and, on this data, the point estimate by only
+     0.000377. Reported, not used: AD-1 rules the
+     specimen-as-unit reading out on patient-identity grounds, not on the effect
+
+==============================================================================
+CONTROL GATE
+==============================================================================
+  [PASS] C-A2 wrong-axis control gives a materially different answer (-0.2016 vs +0.1317) -> the axis convention is doing real work
+  [INFO] C-B reported as NOT APPLICABLE (rank orderings differ); no gate applied
+  [INFO] C-C raw counts rho = +0.427440 (delta 0.295745) -- reports only
+
+==============================================================================
+WRITING RESULTS
+==============================================================================
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\primary_result.csv
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\sensitivity_results.csv
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\extra_variants.csv
+wrote E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\output\controls_capable_of_failing.csv
+  pyreadr available: True
+
+==============================================================================
+HEADLINE
+==============================================================================
+  PRIMARY  GSE205154, primary tumours, patient-level
+           rho = +0.1317  95% CI [-0.0024, +0.2648]  (bootstrap percentile, 10000 resamples, seed 15072026)
+           n = 216 patients / 216 specimens, log2(TMM+1)
+
+  SENSITIVITY SPREAD
+    log2(TPM+1)      rho = +0.1547  [+0.0175, +0.2904]  n = 216
+    unlogged TMM     rho = +0.1456  [+0.0103, +0.2776]  n = 216
+    pair-averaged    rho = +0.1352  [+0.0012, +0.2694]  n = 216
+    met n=71         rho = -0.0351  [-0.2664, +0.2002]  n = 71
+    met n=61         rho = +0.0230  [-0.2327, +0.2849]  n = 61
+
+==============================================================================
+RESULT: ALL CHECKS PASSED
+==============================================================================

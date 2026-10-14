@@ -1,0 +1,105 @@
+====================================================================================================
+sessionInfo.txt -- extension_meta (secondary bulk-extension meta-analysis, BJC revision)
+written : 2026-09-28T12:51:02
+====================================================================================================
+
+[1] PYTHON SESSION
+    python     : 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]
+    executable : C:\Users\<user>\AppData\Local\Programs\Python\Python313\python.exe
+    platform   : Windows-11-10.0.26200-SP0
+    processor  : Intel64 Family 6 Model 198 Stepping 2, GenuineIntel
+    numpy      : 2.4.6
+    scipy      : 1.18.0
+    pandas     : 2.3.3
+    numpy      : 2.4.6
+    scipy      : 1.18.0
+    pandas     : 2.3.3
+    anndata    : 0.12.18
+    matplotlib : 3.11.0
+
+[2] R SESSION
+    C:\Program Files\R\R-4.5.1\bin\Rscript.exe
+    R version 4.5.1 (2025-06-13 ucrt) 
+    metafor : 4.8.0 
+    jsonlite : 2.0.0
+
+[3] WHAT WAS REUSED (not re-implemented)
+    The manuscript's own random_effects_meta() was imported by path from the v39
+    analysis archive and called directly for all three models. A byte-faithful replica
+    of that function exists in scripts/01_extension_meta.py only so that deliberately
+    mutated conventions can be run as falsification controls; the replica is validated
+    against the imported original (control C0, max|delta| = 0 on all three models)
+    before any mutated variant is believed.
+
+[4] INPUT HASHES
+    OK  E:\Tex\HMlong\npjPrecOncol\FINAL_SUBMISSION_v6\BMC_MEDICINE_SUBMISSION_v39\_qa_archive_v39_20260912\scripts\analysis_F_cross_scale.py
+          sha256 7b6a311a0a73835f66596b7ea21070a6355c1fe6de44b518394dfe89f7c4334e
+    OK  E:\Tex\HMlong\npjPrecOncol\FINAL_SUBMISSION_v6\BMC_MEDICINE_SUBMISSION_v39\_qa_archive_v39_20260912\results\bulk_associations.csv
+          sha256 91761ef09b50478017287973128ff92f7a2bab4be22d87a70e4ca7e0633ac52a
+    OK  E:\Tex\HMlong\npjPrecOncol\FINAL_SUBMISSION_v6\BMC_MEDICINE_SUBMISSION_v39\_qa_archive_v39_20260912\results\bulk_random_effects_meta.csv
+          sha256 00aa5271aee5f99faade05fff6535d2e140b993ad88bb62ec965d89b50dc65b0
+    OK  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\primary_result.csv
+          sha256 adc80e4d3afef8be78faf60c64db8bc05ab1dd403c1880734bed88cddc578356
+    OK  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE205154\step3c_rho\results_summary.md
+          sha256 49145873229ef6e0f0dbdc6eaed247a6e2da4b321c8e6c26e47165479c785472
+    OK  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE21501\step3c_rho\output\primary_result.csv
+          sha256 27bdd9532ce79ca6ed3b1606b8a81afab059b238e60f10a47598ced6c2caacc3
+    OK  E:\Tex\HMlong\BJC_EXT_v1_20260927\phaseB_GSE21501\step3c_rho\output\results_summary.md
+          sha256 e9cb783722d16e69caed15e630800a38e32a86fc0be638abc27a1eb3db1ae713
+
+[5] OUTPUT HASHES
+    OK  meta_results.csv
+          sha256 4b9636170816806fe9b466c2180071a4fb7bb38eca45ffaebfc8bcdfe410919d
+    OK  forest_inputs.csv
+          sha256 cf3cc785b764d61b348608b461e05ae4bc10fbb617c40372d9a74e7bc4c7cda9
+    OK  verification_controls.csv
+          sha256 d9dad008fe32650f1ec5ada23d9513162452c395b112e60b8866f930881fdfaf
+    OK  results_summary.md
+          sha256 622504520e58b276f68a52d1e767f5b925f95086711a73a0dd3eaadf9d1df0b7
+    OK  failed_or_excluded.md
+          sha256 d27b87ebe995b20cc1fdda1bc21f1bedcd25ada120e0880b73714d929b48b9f6
+    OK  run_log.txt
+          sha256 eb0c7951b13d1936fca7df7e0410e7c9459a0f575ecda6016ee6d4295888edac
+    OK  sessionInfo.txt
+          sha256 c2eabc40e834d99c616ab1c28ac766914efb4d792b1c0db170ad06154b943965
+    OK  scripts/01_extension_meta.py
+          sha256 f2572e8d8728952f59087cb616f637585e14509a52c0f704cfcb1076afd6f2d8
+    OK  scripts/02_crosscheck_metafor.R
+          sha256 a1f4ca9d61fd2aae3e986ed6d4c9489b386aec27587e439a4afb62dd92bef33c
+    OK  scripts/03_session_info.py
+          sha256 4d1541da38c6927f34d92f732b6720db591a81d6be2ab67817c616fd316b4d32
+    OK  scripts/04_verify_summary.py
+          sha256 0ff3970a788c8fed3602124573be6510b7fd971e4427bfcb213c8599bbe34b18
+    OK  provenance/meta_handoff.json
+          sha256 5f60bef660384603a4a37ee4c6e09e86a8cc8a90002dadd1718db23a05375759
+    OK  provenance/crosscheck_metafor.csv
+          sha256 ee239e101fa69a57c36516d8209c267ada8011b5e4c26f1c4c9155d4ef661568
+    OK  provenance/crosscheck_metafor_log.txt
+          sha256 49bfd029f569c8a3fb167914b45913f553e6e6d2f86e6965862fbc8d8fb5a3d1
+    OK  provenance/checks.json
+          sha256 68661fd3cf34ab21f14e5abc1b99565452a1dea8d06b7d9cea8bae2d2a47920e
+    OK  provenance/headline.json
+          sha256 5c3afa6af0788fd98d015358f1695e6ed42a7b4b4a8d1942bde0e6fdf5bbb9b3
+    OK  provenance/source_hashes.txt
+          sha256 d6e2c2f6cfae212ba341d87aee5a1c73c3ad4ab7d95ef3586c400fb6b7aea4b5
+    OK  provenance/verify_summary_log.txt
+          sha256 c3a395bd3492c68a2ec36c58eafe6b07ce4bb96447b8ae1e6b65044bc6d9cf3c
+
+[6] FROZEN TEXT CARRIED VERBATIM
+    "The three original PDAC bulk cohorts will be combined with the independently
+     eligible primary-tumour GSE205154 cohort using the same Fisher-z transformation,
+     REML random-effects model and modified Hartung-Knapp variance rule used in the
+     manuscript. This four-cohort estimate is a revision-stage secondary pooled estimate
+     and does not replace the original three-cohort estimate."
+    "GSE21501 will then be added in a five-cohort sensitivity analysis because exact
+     patient independence cannot be established from the deposited metadata."
+
+    The GSE21501 analysis was specimen-level because patient identifiers were not
+    deposited; the number of independent patients could therefore not be established
+    exactly.
+
+[7] SCOPE
+    No manuscript text, figure or claim was written or modified. No cohort was excluded,
+    reweighted or reshaped on the basis of its rho magnitude or direction. Bulk cohorts
+    only: no single-cell and no snRNA cohort was pooled. The published three-cohort
+    estimate (rho = 0.132, 95% CI -0.110 to +0.360) is reproduced and remains unreplaced.

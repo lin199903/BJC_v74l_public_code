@@ -1,0 +1,63 @@
+========================================================================
+02_crosscheck_metafor.R   independent-engine cross-check
+run: 2026-09-28 12:51:00
+R R version 4.5.1 (2025-06-13 ucrt) | metafor 4.8.0
+========================================================================
+
+--- 3-cohort published (reproduced)  (k=3: TCGA_PAAD; GSE57495; GSE85916)
+    metafor REML tau2      = 0
+    manuscript tau2        = 5.6286735890082279e-06   |delta| = 5.629e-06
+    metafor QE             = 0.36936722781317366   manuscript = 0.36936722781317388
+    metafor I2             = 0   manuscript = 0
+    metafor pooled z       = 0.13312161467467487
+    modified-HK in R with metafor tau2 = -0.11002095639725552 .. 0.35984806829399446
+    modified-HK in R with ms tau2      = -0.11011663450973935 .. 0.35991731740276467
+    manuscript modified-HK             = -0.11011663450973933 .. 0.35991731740276472
+    UNMODIFIED-HK (metafor knha)       = 0.028431668188397465 .. 0.23342036803728866
+[PASS] REML tau2 agrees within the optimiser tolerance 3-cohort published (reproduced) :: metafor 0.000e+00 (boundary), manuscript 5.629e-06, |delta| 5.629e-06 <= xatol 1e-05
+[PASS] Q agrees (metafor QE vs manuscript Q) 3-cohort published (reproduced) :: |delta| = 2.220e-16
+[PASS] I2 agrees 3-cohort published (reproduced) :: metafor 0.0000000000 vs manuscript 0.0000000000
+[PASS] modified-HK rule reproduced in R matches the manuscript CI (its tau2 carried) 3-cohort published (reproduced) :: max|delta| = 5.551e-17
+[PASS] the metafor-vs-manuscript CI gap is fully explained by the tau2 difference 3-cohort published (reproduced) :: gap with metafor tau2 = 9.568e-05; gap induced by tau2 alone = 9.568e-05
+[PASS] zero-crossing verdict agrees between engines (modified HK) 3-cohort published (reproduced) :: manuscript crosses zero; metafor-tau2 R crosses zero
+[PASS] unmodified-HK control is confirmed by metafor's own knha 3-cohort published (reproduced) :: metafor knha 0.028432..0.233420 vs control file 0.028418..0.233417
+
+--- 4-cohort secondary extension  (k=4: TCGA_PAAD; GSE57495; GSE85916; GSE205154)
+    metafor REML tau2      = 0
+    manuscript tau2        = 5.6286735890082279e-06   |delta| = 5.629e-06
+    metafor QE             = 0.36942193589807903   manuscript = 0.36942193589807926
+    metafor I2             = 0   manuscript = 0
+    metafor pooled z       = 0.13285489281586199
+    modified-HK in R with metafor tau2 = -0.0060383774977545504 .. 0.26525082191895077
+    modified-HK in R with ms tau2      = -0.0061070959167477323 .. 0.26530528756015276
+    manuscript modified-HK             = -0.0061070959167477323 .. 0.26530528756015276
+    UNMODIFIED-HK (metafor knha)       = 0.083917449415793571 .. 0.17962437563199446
+[PASS] REML tau2 agrees within the optimiser tolerance 4-cohort secondary extension :: metafor 0.000e+00 (boundary), manuscript 5.629e-06, |delta| 5.629e-06 <= xatol 1e-05
+[PASS] Q agrees (metafor QE vs manuscript Q) 4-cohort secondary extension :: |delta| = 2.220e-16
+[PASS] I2 agrees 4-cohort secondary extension :: metafor 0.0000000000 vs manuscript 0.0000000000
+[PASS] modified-HK rule reproduced in R matches the manuscript CI (its tau2 carried) 4-cohort secondary extension :: max|delta| = 0.000e+00
+[PASS] the metafor-vs-manuscript CI gap is fully explained by the tau2 difference 4-cohort secondary extension :: gap with metafor tau2 = 6.872e-05; gap induced by tau2 alone = 6.872e-05
+[PASS] zero-crossing verdict agrees between engines (modified HK) 4-cohort secondary extension :: manuscript crosses zero; metafor-tau2 R crosses zero
+[PASS] unmodified-HK control is confirmed by metafor's own knha 4-cohort secondary extension :: metafor knha 0.083917..0.179624 vs control file 0.083906..0.179626
+
+--- 5-cohort sensitivity  (k=5: TCGA_PAAD; GSE57495; GSE85916; GSE205154; GSE21501)
+    metafor REML tau2      = 0
+    manuscript tau2        = 5.6286735890082279e-06   |delta| = 5.629e-06
+    metafor QE             = 0.5322912073510464   manuscript = 0.53229120735104662
+    metafor I2             = 0   manuscript = 0
+    metafor pooled z       = 0.14060369730704447
+    modified-HK in R with metafor tau2 = 0.031775533282408445 .. 0.24437446752094397
+    modified-HK in R with ms tau2      = 0.031725109536542229 .. 0.24441668227584634
+    manuscript modified-HK             = 0.031725109536542243 .. 0.24441668227584634
+    UNMODIFIED-HK (metafor knha)       = 0.10056691022071179 .. 0.1783707359999383
+[PASS] REML tau2 agrees within the optimiser tolerance 5-cohort sensitivity :: metafor 0.000e+00 (boundary), manuscript 5.629e-06, |delta| 5.629e-06 <= xatol 1e-05
+[PASS] Q agrees (metafor QE vs manuscript Q) 5-cohort sensitivity :: |delta| = 2.220e-16
+[PASS] I2 agrees 5-cohort sensitivity :: metafor 0.0000000000 vs manuscript 0.0000000000
+[PASS] modified-HK rule reproduced in R matches the manuscript CI (its tau2 carried) 5-cohort sensitivity :: max|delta| = 1.388e-17
+[PASS] the metafor-vs-manuscript CI gap is fully explained by the tau2 difference 5-cohort sensitivity :: gap with metafor tau2 = 5.042e-05; gap induced by tau2 alone = 5.042e-05
+[PASS] zero-crossing verdict agrees between engines (modified HK) 5-cohort sensitivity :: manuscript excludes zero; metafor-tau2 R excludes zero
+[PASS] unmodified-HK control is confirmed by metafor's own knha 5-cohort sensitivity :: metafor knha 0.100567..0.178371 vs control file 0.100559..0.178374
+
+========================================================================
+TOTAL: 15 checks, 0 failed
+========================================================================
