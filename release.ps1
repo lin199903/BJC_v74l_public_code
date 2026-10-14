@@ -30,7 +30,7 @@
 #   .\release.ps1                # verify, then tag and publish v1.0
 
 param(
-    [string]$Repo    = "lin199903/siglec15-crossscale-measurement",
+    [string]$Repo    = "lin199903/BJC_v74l_public_code",
     [string]$Tag     = "v1.0",
     [string]$Title   = "SIGLEC15 cross-scale measurement - v1.0 frozen analysis code",
     [switch]$DryRun
