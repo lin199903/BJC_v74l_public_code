@@ -13,8 +13,8 @@ type: software
 version: "v1.0"
 date-released: "2026-10-14"
 license: MIT
-repository-code: "https://github.com/lin199903/siglec15-pdac-crossscale-measurement"
-url: "https://github.com/lin199903/siglec15-pdac-crossscale-measurement/releases/tag/v1.0"
+repository-code: "https://github.com/lin199903/siglec15-crossscale-measurement"
+url: "https://github.com/lin199903/siglec15-crossscale-measurement/releases/tag/v1.0"
 keywords:
   - SIGLEC15
   - ACP5
