@@ -19,7 +19,9 @@ ax.set_ylim(0, 10)
 ax.axis("off")
 
 
-def box(x, y, w, h, title, body, fc, ec, fs_t=8.2, fs_b=6.6, yt=0.72, yb=0.35):
+    # v74n: title at yt=0.82 and body at yb=0.28 leave clearance between the bold title
+    # and a two-line body (the original 0.72/0.35 let the body block overlap the title).
+def box(x, y, w, h, title, body, fc, ec, fs_t=8.2, fs_b=6.6, yt=0.82, yb=0.28):
     p = FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.04",
                        fc=fc, ec=ec, lw=1.0, mutation_aspect=1)
     ax.add_patch(p)
